@@ -5,19 +5,13 @@
 		<echo>+</echo>
 		<echo>+ TK1 1st Programming Exercise</echo>
 		<echo>+ Team members:</echo>
-		<echo>+		- Jason</echo>
-		<echo>+		- Dimas</echo>
-		<echo>+		- Subh</echo>
-		<echo>+		- Parvez</echo>
+		<echo>+		- Jason Christian</echo>
+		<echo>+		- Dimas Prawita</echo>
+		<echo>+		- Subhadeep Manna</echo>
+		<echo>+		- Parvez Ahmad</echo>
 		<echo>+-----------------------------------+</echo>
 		
 		<property name="java.security" value="-Djava.security.policy=policy/game.policy"/>
-		
-		<path id="classpath">
-			<fileset dir="client"/>
-			<fileset dir="server"/>
-			<fileset dir="util"/>
-		</path>
 		
 		<presetdef name="javac">
 			<javac includeantruntime="false"/>
@@ -57,7 +51,7 @@
 	
 	<target name="run" depends="copystub" description="Run the server-client programs..">
 		<parallel>
-			<java fork="yes" classname="sun.rmi.registry.RegistryImpl" />
+			<java fork="yes" classname="sun.rmi.registry.RegistryImpl"/>
 			<runserver />
 			<runclient taskname="Client 1"><arg value="Bob"/></runclient>
 			<runclient taskname="Client 2"><arg value="Alice"/></runclient>
